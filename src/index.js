@@ -64,6 +64,7 @@ export const rule = (actual, config) => {
                 index: decl.lastEach,
                 message: messages.expected(`"${prop}: ${value}" -> ${failedValues} failed`),
                 node: decl,
+                ruleName: ruleName,
                 result
             });
         });
