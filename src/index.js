@@ -2,17 +2,25 @@ import { createPlugin } from 'stylelint';
 import { utils } from "stylelint";
 import isVariable  from 'stylelint/lib/utils/isVariable';
 
-export const ruleName = 'plugin-magic-numbers/plugin-magic-numbers';
-export const messages = utils.ruleMessages(
-    ruleName,
+export const numbersRuleName = 'plugin-magic-numbers/rule-magic-numbers';
+export const colorsRuleName = 'plugin-magic-numbers/rule-magic-colors';
+export const numbersMessages = utils.ruleMessages(
+    numbersRuleName,
     {
         expected: hint => `No-Magic-Numbers ${hint}`
     }
 );
 
-export const rule = (actual, config) => {
+export const colorsMessages = utils.ruleMessages(
+    colorsRuleName,
+    {
+        expected: hint => `No-Magic-Colors ${hint}`
+    }
+);
+
+export const numbersRule = (actual, config) => {
     return (root, result) => {
-        const validOptions = utils.validateOptions(result, ruleName, {actual, config});
+        const validOptions = utils.validateOptions(result, numbersRuleName, {actual, config});
         if (!validOptions || !actual) {
             return;
         }
@@ -62,15 +70,59 @@ export const rule = (actual, config) => {
 
             utils.report({
                 index: decl.lastEach,
-                message: messages.expected(`"${prop}: ${value}" -> ${failedValues} failed`),
+                message: numbersMessages.expected(`"${prop}: ${value}" -> ${failedValues} failed`),
                 node: decl,
-                ruleName: ruleName,
+                ruleName: numbersRuleName,
                 result
             });
         });
     };
 };
 
-const rulesPlugins = createPlugin(ruleName, rule);
+export const colorsRule = (actual) => {
+    return (root, result) => {
+        const validOptions = utils.validateOptions(result, numbersRuleName, { actual });
+        if (!validOptions || !actual) {
+            return;
+        }
+
+        root.walkDecls(decl => {
+            const value = decl.value;
+            const prop = decl.prop;
+
+            // ignore variables
+            if (isVariable(value) || value.startsWith("$") || prop.startsWith("$")) {
+                return;
+            }
+
+            // ignore values that are no colors
+            const isColor = RegExp(/rgba?\( *\d+, *\d+, *\d+(, *0?\.?\d+)? *\)|hsla?\( *\d+, *\d+%, *\d+%(, *0?\.?\d+)? *\)|#[0-9a-f]{8}|#[0-9a-f]{6}|#[0-9a-f]{3}/,'ig');
+            if (!isColor.test(value)) {
+                return;
+            }
+
+            // Ignore if Color is inside a String.
+            const isStringWrapped = RegExp(/^['"].*['"]$/);
+            if (isStringWrapped.test(value)) {
+                return;
+            }
+
+            utils.report({
+                index: decl.lastEach,
+                message: colorsMessages.expected(`"${prop}: ${value}"`),
+                node: decl,
+                ruleName: colorsRuleName,
+                result
+            });
+        });
+    };
+};
+
+
+
+const rulesPlugins = [
+    createPlugin(numbersRuleName, numbersRule),
+    createPlugin(colorsRuleName, colorsRule)
+];
 
 export default rulesPlugins;
