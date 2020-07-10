@@ -14,7 +14,6 @@ var _isVariable2 = _interopRequireDefault(_isVariable);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ruleName = exports.ruleName = 'plugin-magic-numbers/plugin-magic-numbers';
-// import isStandardSyntaxRule from 'stylelint/lib/utils/isStandardSyntaxRule';
 var messages = exports.messages = _stylelint.utils.ruleMessages(ruleName, {
     expected: function expected(hint) {
         return 'No-Magic-Numbers ' + hint;
@@ -70,6 +69,7 @@ var rule = exports.rule = function rule(actual, config) {
                 index: decl.lastEach,
                 message: messages.expected('"' + prop + ': ' + value + '" -> ' + failedValues + ' failed'),
                 node: decl,
+                ruleName: ruleName,
                 result: result
             });
         });
