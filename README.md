@@ -117,3 +117,5 @@ The following patterns are _not_ considered violations:
 $highlight-color: $FBFE7B;
 $transparent-black: rgba(0, 0, 0, 0.5);
 ```
+
+[stylelint]: https://stylelint.io/
