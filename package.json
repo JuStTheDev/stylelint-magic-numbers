@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JulianSSS/stylelint-no-magic-numbers.git"
+    "url": "git+https://github.com/JuStTheDev/stylelint-no-magic-numbers.git"
   },
   "keywords": [
     "stylelint",
@@ -26,9 +26,9 @@
   "author": "Julian Strecker <julianstrecker@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JulianSSS/stylelint-no-magic-numbers/issues"
+    "url": "https://github.com/JuStTheDev/stylelint-no-magic-numbers/issues"
   },
-  "homepage": "https://github.com/JulianSSS/stylelint-no-magic-numbers#readme",
+  "homepage": "https://github.com/JuStTheDev/stylelint-no-magic-numbers#readme",
   "peerDependencies": {
     "stylelint": "^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0"
   },
