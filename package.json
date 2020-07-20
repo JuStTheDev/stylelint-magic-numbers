@@ -38,19 +38,12 @@
     "babel-eslint": "^10.0.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-jest": "^23.2.0",
-    "babel-preset-stage-0": "^6.24.1",
     "eslint": "^5.8.0",
-    "eslint-config-prettier": "^3.1.0",
     "eslint-config-stylelint": "^9.0.0",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-prettier": "^3.0.0",
-    "extend": ">=3.0.2",
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
     "jest-preset-stylelint": "^2.0.0",
-    "lodash": "^4.17.11",
-    "prettier": "^1.14.3",
-    "rimraf": "^2.6.2",
     "stylelint": "^13.1.0"
   }
 }
