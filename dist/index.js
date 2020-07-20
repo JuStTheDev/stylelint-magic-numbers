@@ -3,13 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = exports.colorsRule = exports.numbersRule = exports.colorsMessages = exports.numbersMessages = exports.colorsRuleName = exports.numbersRuleName = void 0;
+exports["default"] = exports.colorsRule = exports.numbersRule = exports.colorsMessages = exports.numbersMessages = exports.colorsRuleName = exports.numbersRuleName = void 0;
 
 var _stylelint = require("stylelint");
 
 var _isVariable = _interopRequireDefault(require("stylelint/lib/utils/isVariable"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var numbersRuleName = 'plugin-magic-numbers/rule-magic-numbers';
 exports.numbersRuleName = numbersRuleName;
@@ -49,7 +49,7 @@ var numbersRule = function numbersRule(actual, config) {
       var value = decl.value;
       var prop = decl.prop; // ignore variables
 
-      if ((0, _isVariable.default)(value) || value.startsWith("$") || prop.startsWith("$")) {
+      if ((0, _isVariable["default"])(value) || value.startsWith("$") || prop.startsWith("$")) {
         return;
       } // ignore values that are no numbers
 
@@ -108,7 +108,7 @@ var colorsRule = function colorsRule(actual) {
       var value = decl.value;
       var prop = decl.prop; // ignore variables
 
-      if ((0, _isVariable.default)(value) || value.startsWith("$") || prop.startsWith("$")) {
+      if ((0, _isVariable["default"])(value) || value.startsWith("$") || prop.startsWith("$")) {
         return;
       } // ignore values that are no colors
 
@@ -140,4 +140,4 @@ var colorsRule = function colorsRule(actual) {
 exports.colorsRule = colorsRule;
 var rulesPlugins = [(0, _stylelint.createPlugin)(numbersRuleName, numbersRule), (0, _stylelint.createPlugin)(colorsRuleName, colorsRule)];
 var _default = rulesPlugins;
-exports.default = _default;
+exports["default"] = _default;

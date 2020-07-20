@@ -1,3 +1,5 @@
+"use strict";
+
 var _require = require('../index'),
     numbersMessages = _require.numbersMessages,
     numbersRuleName = _require.numbersRuleName,
