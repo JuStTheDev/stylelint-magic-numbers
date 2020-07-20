@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JuStTheDev/stylelint-no-magic-numbers.git"
+    "url": "git+https://github.com/JuStTheDev/stylelint-magic-numbers.git"
   },
   "keywords": [
     "stylelint",
