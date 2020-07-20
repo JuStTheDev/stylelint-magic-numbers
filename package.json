@@ -1,5 +1,5 @@
 {
-  "name": "stylelint-plugin-no-magic-numbers",
+  "name": "stylelint-no-magic-numbers",
   "version": "1.0.0",
   "description": "Plugin for stylelint with magic number rule",
   "main": "dist/index.js",
