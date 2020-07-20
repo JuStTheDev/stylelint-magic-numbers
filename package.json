@@ -23,7 +23,7 @@
     "stylelint-plugin",
     "magic-numbers"
   ],
-  "author": "Julian Strecker",
+  "author": "Julian Strecker <julianstrecker@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JulianSSS/stylelint-no-magic-numbers/issues"
