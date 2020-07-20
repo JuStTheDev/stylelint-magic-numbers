@@ -11,9 +11,9 @@ var _isVariable = _interopRequireDefault(require("stylelint/lib/utils/isVariable
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var numbersRuleName = 'plugin-magic-numbers/rule-magic-numbers';
+var numbersRuleName = 'magic-numbers/magic-numbers';
 exports.numbersRuleName = numbersRuleName;
-var colorsRuleName = 'plugin-magic-numbers/rule-magic-colors';
+var colorsRuleName = 'magic-numbers/magic-colors';
 exports.colorsRuleName = colorsRuleName;
 
 var numbersMessages = _stylelint.utils.ruleMessages(numbersRuleName, {

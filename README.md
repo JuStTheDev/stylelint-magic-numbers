@@ -1,4 +1,4 @@
-# stylelint-no-magic-numbers
+# stylelint-magic-numbers
 
 [![npm version][npm-version-img]][npm] [![npm downloads last month][npm-downloads-img]][npm] [![npm license][npm-license-img]][npm]
 
@@ -18,25 +18,25 @@ or
 yarn add -D stylelint stylelint-scss
 ```
 
-2.  Install `stylelint-no-magic-numbers`:
+2.  Install `stylelint-magic-numbers`:
 
 ```
-npm install stylelint-no-magic-numbers --save-dev
+npm install stylelint-magic-numbers --save-dev
 ```
 or
 ```
-yarn add -D stylelint-no-magic-numbers
+yarn add -D stylelint-magic-numbers
 ```
 
 ## Usage and Example Config
 
-Add `stylelint-no-magic-numbers` to your stylelint config `plugins` array, then add rules you need to the rules list.
+Add `stylelint-magic-numbers` to your stylelint config `plugins` array, then add rules you need to the rules list.
 
 ```json
 {
   "plugins": [
     "stylelint-scss",
-    "stylelint-no-magic-numbers"
+    "stylelint-magic-numbers"
   ],
   "rules": {
     "plugin-magic-numbers/rule-magic-numbers": [
@@ -122,7 +122,7 @@ $transparent-black: rgba(0, 0, 0, 0.5);
 ```
 
 [stylelint]: https://stylelint.io/
-[npm-version-img]: https://img.shields.io/npm/v/stylelint-no-magic-numbers
-[npm-downloads-img]: https://img.shields.io/npm/dm/stylelint-no-magic-numbers
-[npm-license-img]: https://img.shields.io/npm/l/stylelint-no-magic-numbers
-[npm]: https://www.npmjs.com/package/stylelint-no-magic-numbers
+[npm-version-img]: https://img.shields.io/npm/v/stylelint-magic-numbers
+[npm-downloads-img]: https://img.shields.io/npm/dm/stylelint-magic-numbers
+[npm-license-img]: https://img.shields.io/npm/l/stylelint-magic-numbers
+[npm]: https://www.npmjs.com/package/stylelint-magic-numbers

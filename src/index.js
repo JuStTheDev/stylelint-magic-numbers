@@ -2,8 +2,8 @@ import { createPlugin } from 'stylelint';
 import { utils } from "stylelint";
 import isVariable  from 'stylelint/lib/utils/isVariable';
 
-export const numbersRuleName = 'plugin-magic-numbers/rule-magic-numbers';
-export const colorsRuleName = 'plugin-magic-numbers/rule-magic-colors';
+export const numbersRuleName = 'magic-numbers/magic-numbers';
+export const colorsRuleName = 'magic-numbers/magic-colors';
 export const numbersMessages = utils.ruleMessages(
     numbersRuleName,
     {
