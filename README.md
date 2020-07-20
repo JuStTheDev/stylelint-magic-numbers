@@ -18,7 +18,7 @@ or
 yarn add -D stylelint stylelint-scss
 ```
 
-2.  Install `stylelint-order`:
+2.  Install `stylelint-no-magic-numbers`:
 
 ```
 npm install stylelint-no-magic-numbers --save-dev
