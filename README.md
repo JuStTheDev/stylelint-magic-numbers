@@ -1,4 +1,7 @@
 # stylelint-no-magic-numbers
+
+[![npm version][npm-version-img]][npm] [![npm downloads last month][npm-downloads-img]][npm] [![npm license][npm-license-img]][npm]
+
 Sylelint Plugin to Prevent Magic Numbers
 
 A plugin pack of magic numbers linting rules for SCSS with [stylelint].
@@ -119,3 +122,7 @@ $transparent-black: rgba(0, 0, 0, 0.5);
 ```
 
 [stylelint]: https://stylelint.io/
+[npm-version-img]: https://img.shields.io/npm/v/stylelint-no-magic-numbers
+[npm-downloads-img]: https://img.shields.io/npm/dm/stylelint-no-magic-numbers
+[npm-license-img]: https://img.shields.io/npm/l/stylelint-no-magic-numbers
+[npm]: https://www.npmjs.com/package/stylelint-no-magic-numbers
