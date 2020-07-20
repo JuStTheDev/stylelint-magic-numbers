@@ -39,7 +39,7 @@ Add `stylelint-magic-numbers` to your stylelint config `plugins` array, then add
     "stylelint-magic-numbers"
   ],
   "rules": {
-    "plugin-magic-numbers/rule-magic-numbers": [
+    "magic-numbers/magic-numbers": [
       true,
       {
         "acceptedValues": ["100%", "50%"],
@@ -47,14 +47,14 @@ Add `stylelint-magic-numbers` to your stylelint config `plugins` array, then add
         "severity": "error"
       }
     ],
-    "plugin-magic-numbers/rule-magic-colors": [true],
+    "magic-numbers/magic-colors": [true],
     ...
 }
 ```
 
 ## Rules and Configuration
 
-### `rule-magic-numbers`
+### `magic-numbers`
 The magic numbers rule prohibits usages of magic numbers in SCSS code. Allowed exceptions can be supplied for value-unit combination and for unitless values. SCSS variables are considered as no violations.
 
 Config:
@@ -94,7 +94,7 @@ $border-width: 30px;
 ```
 
 
-### `rule-magic-colors`
+### `magic-colors`
 The magic colors rule prohibits usages of magic colors in SCSS code. Colors in HEX, RGB, RGBA, HSL and HSLA format will be detected. SCSS variables are considered as no violations.
 
 Config:
