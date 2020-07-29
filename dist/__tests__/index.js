@@ -14,7 +14,7 @@ testRule({
   rule: numbersRule,
   ruleName: numbersRuleName,
   config: [true, {
-    acceptedNumbers: [1, 2, 3],
+    acceptedNumbers: [0, 1, 2, 3],
     acceptedValues: ['100%', '25%']
   }],
   accept: [{
@@ -31,6 +31,14 @@ testRule({
     code: '$myVar: 100%;'
   }, {
     code: '.foo { margin: calc(100% - 3rem); }'
+  }, {
+    code: '.foo { transition: all 1s ease; }'
+  }, {
+    code: '.foo { transform: scale(2); }'
+  }, {
+    code: '.foo { transform: scale(2); }'
+  }, {
+    code: '.foo { background-image: url(\'data:image/svg+xml;base64,PHN2Z2LjIwNiAwIDM2LjIwNGwtMjk0LjQgLTM2LjIwNC0uMDAxeiI+PC9wYXRoPjwvc3ZnPg==\'); }'
   }],
   reject: [{
     code: '.foo { width: 75%; }',
@@ -50,6 +58,16 @@ testRule({
   }, {
     code: '.foo { margin: calc(100% - 4rem); }',
     message: numbersMessages.expected('"margin: calc(100% - 4rem)" -> 4rem failed'),
+    line: 1,
+    column: 8
+  }, {
+    code: '.foo { line-height: 44; }',
+    message: numbersMessages.expected('"line-height: 44" -> 44 failed'),
+    line: 1,
+    column: 8
+  }, {
+    code: '.foo { transform: scale(1.1); }',
+    message: numbersMessages.expected('"transform: scale(1.1)" -> 1.1 failed'),
     line: 1,
     column: 8
   }]

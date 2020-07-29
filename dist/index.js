@@ -54,11 +54,12 @@ var numbersRule = function numbersRule(actual, config) {
       } // ignore values that are no numbers
 
 
-      if (!/\d+\.?\d*(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)|\.\d+/.test(value)) {
+      var valueRegExp = RegExp(/\d+\.?\d*(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax|ms|s)?|\.\d+/, 'g');
+
+      if (!valueRegExp.test(value)) {
         return;
       }
 
-      var valueRegExp = RegExp(/\d+\.?\d*(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax)/, 'g');
       var values = [];
       value.match(valueRegExp).forEach(function (currentValue) {
         if (currentValue) {
@@ -78,6 +79,13 @@ var numbersRule = function numbersRule(actual, config) {
       });
 
       if (accepted) {
+        return;
+      } // Ignore if Value is inside a String.
+
+
+      var isStringWrapped = RegExp(/^(.*\()?['"].*['"]\)?$/g);
+
+      if (isStringWrapped.test(value)) {
         return;
       }
 
