@@ -36,7 +36,7 @@ export const numbersRule = (actual, config) => {
             }
 
             // ignore values that are no numbers
-            const valueRegExp = RegExp(/\d+\.?\d*(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax|ms|s|fr)?|\.\d+/, 'g');
+            const valueRegExp = RegExp(/\d+\.?\d*(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax|ms|s)?|\.\d+/, 'g');
             if (!valueRegExp.test(value)) {
                 return;
             }
