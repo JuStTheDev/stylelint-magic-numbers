@@ -54,7 +54,7 @@ var numbersRule = function numbersRule(actual, config) {
       } // ignore values that are no numbers
 
 
-      var valueRegExp = RegExp(/\d+\.?\d*(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax|ms|s)?|\.\d+/, 'g');
+      var valueRegExp = RegExp(/\d+\.?\d*(em|ex|%|px|cm|mm|in|pt|pc|ch|rem|vh|vw|vmin|vmax|ms|s|fr)?|\.\d+/, 'g');
 
       if (!valueRegExp.test(value)) {
         return;
