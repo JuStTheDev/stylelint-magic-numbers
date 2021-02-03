@@ -1,6 +1,6 @@
 {
   "name": "stylelint-magic-numbers",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Plugin for stylelint with magic number rule",
   "main": "dist/index.js",
   "engines": {
