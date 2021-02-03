@@ -7,10 +7,16 @@ testRule({
     config: [true, {acceptedNumbers: [0,1,2,3], acceptedValues: ['100%', '25%']}],
     accept: [
         {
+            code: '.foo { color: green; }'
+        },
+        {
             code: '.foo { width: $myVar; }'
         },
         {
             code: '.foo { width: 1px; }'
+        },
+        {
+            code: '.foo { grid-template-rows: max-content 1fr max-content; }'
         },
         {
             code: '.foo { width: 25%; }'
@@ -25,6 +31,9 @@ testRule({
             code: '$myVar: 100%;'
         },
         {
+            code: '$myVar: 1fr;'
+        },
+        {
             code: '.foo { margin: calc(100% - 3rem); }'
         },
         {
@@ -37,7 +46,7 @@ testRule({
             code: '.foo { transform: scale(2); }'
         },
         {
-            code: '.foo { background-image: url(\'data:image/svg+xml;base64,PHN2Z2LjIwNiAwIDM2LjIwNGwtMjk0LjQgLTM2LjIwNC0uMDAxeiI+PC9wYXRoPjwvc3ZnPg==\'); }'
+            code: '.foo { background-image: url(\'data:image/svg+xml;base64,PHN2Z2LjIwNiAwIDM2LjIwNGwtMjk0LjQgLTM2LjIwNC0uMDAxeiI+PC9wYXRoPjwvc35ZnPg==\'); }'
         }
 
     ],
@@ -45,6 +54,12 @@ testRule({
         {
             code: '.foo { width: 75%; }',
             message: numbersMessages.expected('"width: 75%" -> 75% failed'),
+            line: 1,
+            column: 8
+        },
+        {
+            code: '.foo { grid-template-rows: max-content 4fr max-content; }',
+            message: numbersMessages.expected('"grid-template-rows: max-content 4fr max-content" -> 4fr failed'),
             line: 1,
             column: 8
         },
