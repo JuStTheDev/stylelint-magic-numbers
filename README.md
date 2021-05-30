@@ -1,6 +1,6 @@
 # stylelint-magic-numbers
 
-[![npm version][npm-version-img]][npm] [![npm downloads last month][npm-downloads-img]][npm] [![npm license][npm-license-img]][npm]
+[![npm version][npm-version-img]][npm] [![npm downloads last month][npm-downloads-img]][npm] [![npm license][npm-license-img]][npm] [![github-last-commit]][github]
 
 Sylelint Plugin to Prevent Magic Numbers
 
@@ -122,7 +122,9 @@ $transparent-black: rgba(0, 0, 0, 0.5);
 ```
 
 [stylelint]: https://stylelint.io/
-[npm-version-img]: https://img.shields.io/npm/v/stylelint-magic-numbers
-[npm-downloads-img]: https://img.shields.io/npm/dm/stylelint-magic-numbers
-[npm-license-img]: https://img.shields.io/npm/l/stylelint-magic-numbers
+[github-last-commit]: https://img.shields.io/github/last-commit/JuStTheDev/stylelint-magic-numbers?style=for-the-badge
+[npm-version-img]: https://img.shields.io/npm/v/stylelint-magic-numbers?style=for-the-badge
+[npm-downloads-img]: https://img.shields.io/npm/dm/stylelint-magic-numbers?style=for-the-badge
+[npm-license-img]: https://img.shields.io/npm/l/stylelint-magic-numbers?style=for-the-badge
 [npm]: https://www.npmjs.com/package/stylelint-magic-numbers
+[github]: https://github.com/JuStTheDev/stylelint-magic-numbers
