@@ -125,10 +125,10 @@ var colorsRule = function colorsRule(actual) {
 
       if (!isColor.test(value)) {
         return;
-      } // Ignore if Color is inside a String.
+      } // Ignore if Value is inside a String.
 
 
-      var isStringWrapped = RegExp(/^['"].*['"]$/);
+      var isStringWrapped = RegExp(/^(.*\()?['"].*['"]\)?$/g);
 
       if (isStringWrapped.test(value)) {
         return;

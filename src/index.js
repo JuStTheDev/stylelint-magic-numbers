@@ -102,7 +102,7 @@ export const colorsRule = (actual) => {
             }
 
             // Ignore if Color is inside a String.
-            const isStringWrapped = RegExp(/^['"].*['"]$/);
+            const isStringWrapped = RegExp(/^(.*\()?['"].*['"]\)?$/g);
             if (isStringWrapped.test(value)) {
                 return;
             }

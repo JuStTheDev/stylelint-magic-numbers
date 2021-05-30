@@ -42,9 +42,13 @@ testRule({
   }, {
     code: '.foo { transform: scale(2); }'
   }, {
-    code: '.foo { transform: scale(2); }'
-  }, {
     code: '.foo { background-image: url(\'data:image/svg+xml;base64,PHN2Z2LjIwNiAwIDM2LjIwNGwtMjk0LjQgLTM2LjIwNC0uMDAxeiI+PC9wYXRoPjwvc35ZnPg==\'); }'
+  }, {
+    code: '.foo { background-image: url("data:image/svg+xml;base64,PHN2Z2LjIwNiAwIDM2LjIwNGwtMjk0LjQgLTM2LjIwNC0uMDAxeiI+PC9wYXRoPjwvc35ZnPg=="); }'
+  }, {
+    code: '.foo:after { content: "The answer is 42" }'
+  }, {
+    code: '.foo:after { content: \'The answer is 42\' }'
   }],
   reject: [{
     code: '.foo { width: 75%; }',
@@ -105,35 +109,39 @@ testRule({
     code: '.foo { content: \'#ABC\'; }'
   }, {
     code: '.foo { content: "#ABC"; }'
+  }, {
+    code: '.foo { background-image: url(\'data:image/svg+xml;base64,#ABCABCrgba(2,3,4)==\'); }'
+  }, {
+    code: '.foo { background-image: url("data:image/svg+xml;base64,#ABCABCrgba(2,3,4)=="); }'
   }],
   reject: [{
-    code: '.foo { color: rgb(2,3, 4); }',
-    message: colorsMessages.expected('"color: rgb(2,3, 4)"'),
+    code: '.foo { color: rgb(2, 3, 4); }',
+    message: colorsMessages.expected('"color: rgb(2, 3, 4)"'),
     line: 1,
     column: 8
   }, {
-    code: '.foo { color: rgba(2,3, 4, 0.5); }',
-    message: colorsMessages.expected('"color: rgba(2,3, 4, 0.5)"'),
+    code: '.foo { color: rgba(2, 3, 4, 0.5); }',
+    message: colorsMessages.expected('"color: rgba(2, 3, 4, 0.5)"'),
     line: 1,
     column: 8
   }, {
-    code: '.foo { color: RGBA(2,3, 4, .5); }',
-    message: colorsMessages.expected('"color: RGBA(2,3, 4, .5)"'),
+    code: '.foo { color: RGBA(2, 3, 4, .5); }',
+    message: colorsMessages.expected('"color: RGBA(2, 3, 4, .5)"'),
     line: 1,
     column: 8
   }, {
-    code: '.foo { color: hsl(2,3%, 4%); }',
-    message: colorsMessages.expected('"color: hsl(2,3%, 4%)"'),
+    code: '.foo { color: hsl(2, 3%, 4%); }',
+    message: colorsMessages.expected('"color: hsl(2, 3%, 4%)"'),
     line: 1,
     column: 8
   }, {
-    code: '.foo { color: hsla(2,3%, 4%); }',
-    message: colorsMessages.expected('"color: hsla(2,3%, 4%)"'),
+    code: '.foo { color: hsla(2, 3%, 4%); }',
+    message: colorsMessages.expected('"color: hsla(2, 3%, 4%)"'),
     line: 1,
     column: 8
   }, {
-    code: '.foo { color: HSLA(2,3%, 4%, 0.5); }',
-    message: colorsMessages.expected('"color: HSLA(2,3%, 4%, 0.5)"'),
+    code: '.foo { color: HSLA(2, 3%, 4%, 0.5); }',
+    message: colorsMessages.expected('"color: HSLA(2, 3%, 4%, 0.5)"'),
     line: 1,
     column: 8
   }, {
