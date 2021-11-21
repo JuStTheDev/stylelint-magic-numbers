@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = exports.colorsRule = exports.numbersRule = exports.colorsMessages = exports.numbersMessages = exports.colorsRuleName = exports.numbersRuleName = void 0;
+exports.numbersRuleName = exports.numbersRule = exports.numbersMessages = exports["default"] = exports.colorsRuleName = exports.colorsRule = exports.colorsMessages = void 0;
 
 var _stylelint = require("stylelint");
 
@@ -125,7 +125,7 @@ var colorsRule = function colorsRule(actual) {
 
       if (!isColor.test(value)) {
         return;
-      } // Ignore if Value is inside a String.
+      } // Ignore if Color is inside a String.
 
 
       var isStringWrapped = RegExp(/^(.*\()?['"].*['"]\)?$/g);
