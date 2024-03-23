@@ -2,17 +2,25 @@
   "name": "stylelint-magic-numbers",
   "version": "1.0.5",
   "description": "Plugin for stylelint with magic number rule",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "engines": {
-    "node": ">=8.7.0"
+    "node": ">=20.0.0"
   },
+  "files": [
+    "src/**/*.js",
+    "!src/**/README.md",
+    "!**/__tests__/**"
+  ],
   "scripts": {
-    "precommit": "lint-staged",
-    "build": "babel src --out-dir dist",
     "lint": "eslint . --ignore-path .gitignore",
-    "prepublish": "npm run build",
-    "pretest": "npm run build",
-    "test": "jest"
+    "release": "np",
+    "jest": "cross-env NODE_OPTIONS=\"--experimental-vm-modules --no-warnings\" jest",
+    "test": "npm run jest -- --coverage",
+    "watch": "npm run jest -- --watch",
+    "test-rule": "npm run jest",
+    "test-util": "npm run jest",
+    "generate-contributors-list": "githubcontrib --owner stylelint-scss --repo stylelint-scss --cols 6 --sortOrder desc --filter greenkeeper[bot],dependabot[bot] --showlogin true --imagesize 80 --format html",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -21,7 +29,8 @@
   "keywords": [
     "stylelint",
     "stylelint-plugin",
-    "magic-numbers"
+    "magic-numbers",
+    "magic-colors"
   ],
   "author": "Julian Strecker <julianstrecker@gmail.com>",
   "license": "MIT",
@@ -30,20 +39,21 @@
   },
   "homepage": "https://github.com/JuStTheDev/stylelint-magic-numbers#readme",
   "peerDependencies": {
-    "stylelint": ">=9.0.0"
+    "stylelint": "^16.0.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.14.3",
-    "@babel/core": "^7.14.3",
-    "@babel/preset-env": "^7.14.4",
+    "@babel/cli": "^7.24.1",
+    "@babel/core": "^7.24.3",
+    "@babel/preset-env": "^7.24.3",
     "babel-eslint": "^10.1.0",
-    "babel-preset-jest": "^27.0.0",
-    "eslint": "^7.5.0",
-    "eslint-config-stylelint": "^13.1.1",
-    "eslint-plugin-import": "^2.14.0",
-    "jest": "^27.0.3",
-    "jest-cli": "^27.0.3",
-    "jest-preset-stylelint": "^4.1.1",
-    "stylelint": "^15.6.0"
+    "babel-preset-jest": "^29.6.3",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.57.0",
+    "eslint-config-stylelint": "^21.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "jest": "^29.7.0",
+    "jest-cli": "^29.7.0",
+    "jest-preset-stylelint": "^7.0.0",
+    "stylelint": ">=16.2.1"
   }
 }
