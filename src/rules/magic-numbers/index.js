@@ -1,11 +1,13 @@
 "use strict";
 
-const { utils } = require("stylelint");
-const isVariable = require("stylelint/lib/utils/isVariable.cjs");
+const stylelint = require("stylelint");
 
+const { utils: {ruleMessages, validateOptions, report} } = stylelint;
+const {declarationValueIndex} = require("stylelint/lib/utils/nodeFieldIndices.cjs");
+const isVariable = require("stylelint/lib/utils/isVariable.cjs");
 const ruleName = "magic-numbers/magic-numbers";
 
-const messages = utils.ruleMessages(ruleName, {
+const messages = ruleMessages(ruleName, {
     expected: hint => `No-Magic-Numbers ${hint}`
 });
 
@@ -15,14 +17,14 @@ const meta = {
 
 function rule(actual, config) {
     return (root, result) => {
-        const validOptions = utils.validateOptions(result, ruleName, { actual, config });
+        const validOptions = validateOptions(result, ruleName, {actual, config});
 
         if (!validOptions) {
             return;
         }
 
-        let acceptedValues = config?.acceptedValues || [];
-        let acceptedNumbers = config?.acceptedNumbers || [];
+        const acceptedValues = config?.acceptedValues || [];
+        const acceptedNumbers = config?.acceptedNumbers || [];
 
         root.walkDecls(decl => {
             const value = decl.value;
@@ -66,8 +68,9 @@ function rule(actual, config) {
                 return;
             }
 
-            utils.report({
-                index: decl.lastEach,
+            report({
+                index: declarationValueIndex(decl),
+                endIndex: declarationValueIndex(decl) + value.length,
                 message: messages.expected(`"${prop}: ${value}" -> ${failedValues} failed`),
                 node: decl,
                 ruleName,

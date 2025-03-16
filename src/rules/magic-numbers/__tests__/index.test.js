@@ -62,43 +62,43 @@ describe('magic-numbers', () => {
                 code: '.foo { width: 75%; }',
                 message: messages.expected('"width: 75%" -> 75% failed'),
                 line: 1,
-                column: 8
+                column: 15
             },
             {
                 code: '.foo { grid-template-rows: max-content 4fr max-content; }',
                 message: messages.expected('"grid-template-rows: max-content 4fr max-content" -> 4fr failed'),
                 line: 1,
-                column: 8
+                column: 28
             },
             {
                 code: '.foo { width: 100px; }',
                 message: messages.expected('"width: 100px" -> 100px failed'),
                 line: 1,
-                column: 8
+                column: 15
             },
             {
                 code: '.foo { margin: 0 10px 0 15px; }',
                 message: messages.expected('"margin: 0 10px 0 15px" -> 10px,15px failed'),
                 line: 1,
-                column: 8
+                column: 16
             },
             {
                 code: '.foo { margin: calc(100% - 4rem); }',
                 message: messages.expected('"margin: calc(100% - 4rem)" -> 4rem failed'),
                 line: 1,
-                column: 8
+                column: 16
             },
             {
                 code: '.foo { line-height: 44; }',
                 message: messages.expected('"line-height: 44" -> 44 failed'),
                 line: 1,
-                column: 8
+                column: 21
             },
             {
                 code: '.foo { transform: scale(1.1); }',
                 message: messages.expected('"transform: scale(1.1)" -> 1.1 failed'),
                 line: 1,
-                column: 8
+                column: 19
             }
         ]
     });
@@ -121,12 +121,12 @@ describe('magic-numbers minimum config', () => {
                 code: '.foo { width: 1px; }',
                 message: messages.expected('"width: 1px" -> 1px failed'),
                 line: 1,
-                column: 8
+                column: 15
             },            {
                 code: '.foo { grid-template-rows: max-content 1fr max-content; }',
                 message: messages.expected('"grid-template-rows: max-content 1fr max-content" -> 1fr failed'),
                 line: 1,
-                column: 8
+                column: 28
             }
         ]
     });
@@ -135,7 +135,7 @@ describe('magic-numbers minimum config', () => {
 
 describe('magic-numbers wrong config', () => {
     testRule({
-        ruleName: ruleName,
+        ruleName,
         config: [{foo: "bar"}],
         reject: [
             {

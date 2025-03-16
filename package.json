@@ -1,6 +1,6 @@
 {
   "name": "stylelint-magic-numbers",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Plugin for stylelint with magic number rule",
   "main": "src/index.js",
   "engines": {
@@ -38,12 +38,12 @@
   },
   "homepage": "https://github.com/JuStTheDev/stylelint-magic-numbers#readme",
   "peerDependencies": {
-    "stylelint": "^16.0.2"
+    "stylelint": "^16.16.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.24.1",
-    "@babel/core": "^7.24.3",
-    "@babel/preset-env": "^7.24.3",
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
     "babel-eslint": "^10.1.0",
     "babel-preset-jest": "^29.6.3",
     "cross-env": "^7.0.3",
@@ -52,7 +52,7 @@
     "eslint-plugin-import": "^2.29.1",
     "jest": "^29.7.0",
     "jest-cli": "^29.7.0",
-    "jest-preset-stylelint": "^7.0.0",
-    "stylelint": ">=16.2.1"
+    "jest-preset-stylelint": "^7.2.0",
+    "stylelint": "^16.16.0"
   }
 }

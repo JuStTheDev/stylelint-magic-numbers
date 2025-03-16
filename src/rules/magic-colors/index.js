@@ -1,11 +1,15 @@
 "use strict";
 
-const { utils } = require("stylelint");
+const stylelint = require("stylelint");
+const {
+    utils: { report, ruleMessages, validateOptions }
+} = stylelint;
+const { declarationValueIndex } = require("stylelint/lib/utils/nodeFieldIndices.cjs");
 const isVariable = require("stylelint/lib/utils/isVariable.cjs");
 
 const ruleName = "magic-numbers/magic-colors";
 
-const messages = utils.ruleMessages(ruleName, {
+const messages = ruleMessages(ruleName, {
     expected: hint => `No-Magic-Colors ${hint}`
 });
 
@@ -15,7 +19,7 @@ const meta = {
 
 function rule(actual, config) {
     return (root, result) => {
-        const validOptions = utils.validateOptions(result, ruleName, { actual, config });
+        const validOptions = validateOptions(result, ruleName, { actual, config });
         if (!validOptions || !actual) {
             return;
         }
@@ -40,9 +44,9 @@ function rule(actual, config) {
             if (isStringWrapped.test(value)) {
                 return;
             }
-
-            utils.report({
-                index: decl.lastEach,
+            report({
+                index: declarationValueIndex(decl),
+                endIndex: declarationValueIndex(decl) + value.length,
                 message: messages.expected(`"${prop}: ${value}"`),
                 node: decl,
                 ruleName,
