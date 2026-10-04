@@ -2,3 +2,4 @@
 .idea/
 *.log
 .coverage
+/dist

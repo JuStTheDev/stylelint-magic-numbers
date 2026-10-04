@@ -13,19 +13,11 @@ A plugin pack of magic numbers linting rules for SCSS with [stylelint].
 ```
 npm install stylelint stylelint-scss --save-dev
 ```
-or
-```
-yarn add -D stylelint stylelint-scss
-```
 
 2.  Install `stylelint-magic-numbers`:
 
 ```
 npm install stylelint-magic-numbers --save-dev
-```
-or
-```
-yarn add -D stylelint-magic-numbers
 ```
 
 ## Usage and Example Config
