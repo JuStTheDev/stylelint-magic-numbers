@@ -34,9 +34,7 @@
     "dev": "tsdown --watch",
     "lint": "eslint '**/*.{js,cjs,mjs,ts,cts,mts}'",
     "lint:fix": "eslint '**/*.{js,cjs,mjs,ts,cts,mts}' --fix",
-    "release:official": "release-it --config .release-it--official.json",
-    "release:dry": "release-it --dry-run",
-    "test": "vitest",
+    "test": "vitest run",
     "test:watch": "vitest --watch"
   },
   "dependencies": {
@@ -53,7 +51,6 @@
     "globals": "^17.13.0",
     "jiti": "^2.7.0",
     "prettier": "^3.9.9",
-    "release-it": "^21.1.0",
     "stylelint": "^16.26.1",
     "tsdown": "^0.23.0",
     "typescript": "^6.0.3",
