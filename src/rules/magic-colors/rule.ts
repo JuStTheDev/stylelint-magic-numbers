@@ -3,10 +3,12 @@
 import stylelint, { Rule } from 'stylelint';
 
 const { validateOptions, report } = stylelint.utils;
-// @ts-expect-error It works like this
-import { declarationValueIndex } from 'stylelint/lib/utils/nodeFieldIndices.cjs';
-// @ts-expect-error It works like this
-import isVariable from 'stylelint/lib/utils/isVariable.cjs';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import { declarationValueIndex } from 'stylelint/lib/utils/nodeFieldIndices.mjs';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import isVariable from 'stylelint/lib/utils/isVariable.mjs';
 import { messages, meta } from './meta';
 import { FixProps, severityOption, SeverityProps } from '../../utils/types';
 

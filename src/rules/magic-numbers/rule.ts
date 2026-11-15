@@ -5,10 +5,10 @@ import stylelint, { Rule } from 'stylelint';
 const { validateOptions, report } = stylelint.utils;
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
-import { declarationValueIndex } from 'stylelint/lib/utils/nodeFieldIndices.cjs';
+import { declarationValueIndex } from 'stylelint/lib/utils/nodeFieldIndices.mjs';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
-import isVariable from 'stylelint/lib/utils/isVariable.cjs';
+import isVariable from 'stylelint/lib/utils/isVariable.mjs';
 import { messages, meta } from './meta';
 
 const ruleName = 'magic-numbers/magic-numbers';
